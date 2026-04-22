@@ -95,6 +95,15 @@ int main() {
 
     if (choice == 3) {
         message = read_message_from_file("data/input.txt");
+        if (message.empty()) {
+            message = read_message_from_file("lab2-classical-ciphers-quanghuy04dd/data/input.txt");
+        }
+
+        if (message.empty()) {
+            cout << "Cannot read message from input file.\n";
+            return 0;
+        }
+
         cout << "Message from file: " << message << "\n";
     } else {
         cout << "Enter message: ";
